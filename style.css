@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif !important;
+    background-color: #232529;
+}
+#detail{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/* #model_project_container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.815);
+    height: 100vh;
+    z-index: 30;
+}
+#model_project{
+    background-color: #252525;
+    max-width: 1200px;
+    height: 400px;
+    position: relative;
+    padding: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgb(255, 255, 255) 0px 50px 100px -20px, rgb(255, 255, 255) 0px 30px 60px -30px, rgb(255, 255, 255) 0px -2px 6px 0px inset;
+}
+#model_project_container.show{
+    opacity: 1;
+    pointer-events: all;
+}
+#model_project_container.show{
+    transition: all 0.5s ease-in-out;
+} */
