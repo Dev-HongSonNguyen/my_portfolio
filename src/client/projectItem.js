@@ -1,19 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "../lib";
 
-const projectItem = ({item}) => {
-    const [category, setCategory] = useState({});
-    useEffect(()=>{
-        axios.get(`https://s2qbne-8080.preview.csb.app/api/categories/${item.categoryId}`)
-        .then(({data})=> setCategory(data))
-        // console.log(data);
-    },[item])
+const projectItem = ({ item }) => {
+  console.log("item", item);
+  const [category, setCategory] = useState({});
+  useEffect(() => {
+    axios
+      .get(`https://s2qbne-8080.csb.app/api/categories/${item.categoryId}`)
+      .then(({ data }) => setCategory(data));
+  }, [item]);
+  console.log("item", item);
+  console.log(category);
   return `
   <div class="item py-5">
         <div class="rounded-xl overflow-hidden">
             <a href="/project/detailProject/${item.id}" id="btn_show_project">
                 <img class="w-full rounded-md"
-                    src="${item.gallery}"
+                    src="${item.image}"
                     alt="">
             </a>
         </div>
@@ -36,15 +39,19 @@ const projectItem = ({item}) => {
                 </li>
             </ul>
         </div>
+        <div class="flex">
         <div>
-            <a href="https://github.com/Dev-HongSonNguyen"
-                class="text-[10px] text-[#ffff] font-bold tracking-[1px] border px-10 py-2 border-[#f75023] hover:bg-[#f75023] hover:text-[#ffff] rounded-md">View
-                source code git </a>
+            <a href=${item.demo}
+                class="text-[10px] text-[#ffff] font-bold tracking-[1px] border px-10 py-2 border-[#f75023] hover:bg-[#f75023] hover:text-[#ffff] rounded-md inline-block mr-[10px]">Demo</a>
         </div>
+        <div>
+            <a href=${item.source}
+                class="text-[10px] text-[#ffff] font-bold tracking-[1px] border px-10 py-2 border-[#f75023] hover:bg-[#f75023] hover:text-[#ffff] rounded-md inline-block">View
+                source code git </a>
+        </div></div>
         <!-- model-->
 </div>
-  `
-  
-}
+  `;
+};
 
-export default projectItem
+export default projectItem;

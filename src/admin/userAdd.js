@@ -1,25 +1,26 @@
 import axios from "axios";
-import headerAdmin from "../../components/headerAdmin"
-import { router, useEffect } from "../lib"
+import headerAdmin from "../../components/headerAdmin";
+import { router, useEffect } from "../lib";
 
 const userAdd = () => {
-    useEffect(()=>{
-        const form_add = document.querySelector("#form-add");
-        const name = document.querySelector("#name");
-        const email = document.querySelector("#email");
-        const password = document.querySelector("#password");
-        form_add.addEventListener("submit", function(e){
-            e.preventDefault();
-            const newAcount = {
-                name: name.value,
-                email: email.value,
-                password: password.value,
-            }
-            axios.post(`https://s2qbne-8080.preview.csb.app/api/APIadmin`, newAcount)
-            .then(()=> router.navigate("/admin/userAdmin"))
-            .catch(()=> alert("Edit to Fail !"))
-        })
-    })
+  useEffect(() => {
+    const form_add = document.querySelector("#form-add");
+    const name = document.querySelector("#name");
+    const email = document.querySelector("#email");
+    const password = document.querySelector("#password");
+    form_add.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const newAcount = {
+        name: name.value,
+        email: email.value,
+        password: password.value,
+      };
+      axios
+        .post(`https://s2qbne-8080.preview.csb.app/api/APIadmin`, newAcount)
+        .then(() => router.navigate("/admin/userAdmin"))
+        .catch(() => alert("Edit to Fail !"));
+    });
+  }, []);
   return `
   ${headerAdmin()}
   <div class="max-w-6xl m-auto my-5">
@@ -43,6 +44,6 @@ const userAdd = () => {
         </div>
     </form>
   </div>
-  `
-}
-export default userAdd
+  `;
+};
+export default userAdd;

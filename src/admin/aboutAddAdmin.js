@@ -1,21 +1,22 @@
 import axios from "axios";
-import headerAdmin from "../../components/headerAdmin"
-import { router, useEffect } from "../lib"
+import headerAdmin from "../../components/headerAdmin";
+import { router, useEffect } from "../lib";
 
 const aboutAddAdmin = () => {
-    useEffect(()=>{
-        const form = document.querySelector("#form");
-        const about = document.querySelector("#about")
-        form.addEventListener("submit", function(e){
-            e.preventDefault();
-            const formAboutMe = {
-                about: about.value,
-            }
-            axios.post("https://s2qbne-8080.preview.csb.app/api/APIabout", formAboutMe)
-            .then(()=> router.navigate("/admin/aboutAdmin"))
-            .catch(()=>alert("Add About Me to Fail !"))
-        })
-    })
+  useEffect(() => {
+    const form = document.querySelector("#form");
+    const about = document.querySelector("#about");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formAboutMe = {
+        about: about.value,
+      };
+      axios
+        .post("https://s2qbne-8080.csb.app/api/APIabout", formAboutMe)
+        .then(() => router.navigate("/admin/aboutAdmin"))
+        .catch(() => alert("Add About Me to Fail !"));
+    });
+  }, []);
   return `<div>
   ${headerAdmin()}
   <div class="max-w-6xl m-auto">
@@ -31,8 +32,7 @@ const aboutAddAdmin = () => {
           </div>
     </form>
   </div>
-  </div>`
-  
-}
+  </div>`;
+};
 
-export default aboutAddAdmin
+export default aboutAddAdmin;

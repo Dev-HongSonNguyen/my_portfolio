@@ -1,24 +1,25 @@
 import axios from "axios";
-import headerAdmin from "../../components/headerAdmin"
-import { router, useEffect } from "../lib"
+import headerAdmin from "../../components/headerAdmin";
+import { router, useEffect } from "../lib";
 
 const processAddAdmin = () => {
-    useEffect(()=>{
-        const form = document.querySelector("#form");
-        const name = document.querySelector("#name");
-        const des = document.querySelector("#des")
-        form.addEventListener("submit", function(e){
-        e.preventDefault();
-        const form = {
-            name: name.value,
-            description: des.value,
-        }
-        axios.post("https://s2qbne-8080.preview.csb.app/api/APIprocess", form)
-        .then(()=> alert ("Add Sucessfully !"))
-        .then(()=> router.navigate("/admin/processListAdmin"))
-        .catch(()=> alert("Add to fail !"))
-        })
-    })
+  useEffect(() => {
+    const form = document.querySelector("#form");
+    const name = document.querySelector("#name");
+    const des = document.querySelector("#des");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const form = {
+        name: name.value,
+        description: des.value,
+      };
+      axios
+        .post("https://s2qbne-8080.csb.app/api/APIprocess", form)
+        .then(() => alert("Add Sucessfully !"))
+        .then(() => router.navigate("/admin/processListAdmin"))
+        .catch(() => alert("Add to fail !"));
+    });
+  }, []);
   return `
     ${headerAdmin()}
     <div class="max-w-6xl m-auto">
@@ -38,7 +39,7 @@ const processAddAdmin = () => {
           </div>
     </form>
   </div>
-  `
-}
+  `;
+};
 
-export default processAddAdmin
+export default processAddAdmin;

@@ -17,7 +17,7 @@ const aboutListAdmin = () => {
                 })
             })
         }
-    })
+    },[])
   return `
   ${headerAdmin()}
   <div class="max-w-6xl m-auto my-5">

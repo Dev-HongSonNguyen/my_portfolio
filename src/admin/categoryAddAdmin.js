@@ -1,21 +1,22 @@
 import axios from "axios";
-import headerAdmin from "../../components/headerAdmin"
-import { router, useEffect } from "../lib"
+import headerAdmin from "../../components/headerAdmin";
+import { router, useEffect } from "../lib";
 
 const categoryAddAdmin = () => {
-    useEffect(()=>{
-        const form = document.querySelector("#form");
-        const name_cate = document.querySelector("#name_cate");
-        form.addEventListener("submit", function(e){
-            e.preventDefault();
-            const formCate = {
-                name: name_cate.value,
-            }
-            axios.post("https://s2qbne-8080.preview.csb.app/api/categories", formCate)
-            .then(()=> router.navigate("/admin/categoryListAdmin"))
-            .catch(()=> alert("Add to Fail !"))
-        })
-    })
+  useEffect(() => {
+    const form = document.querySelector("#form");
+    const name_cate = document.querySelector("#name_cate");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formCate = {
+        name: name_cate.value,
+      };
+      axios
+        .post("https://s2qbne-8080.csb.app/api/categories", formCate)
+        .then(() => router.navigate("/admin/categoryListAdmin"))
+        .catch(() => alert("Add to Fail !"));
+    });
+  }, []);
   return `
   ${headerAdmin()}
   <div class="max-w-6xl m-auto">
@@ -31,8 +32,7 @@ const categoryAddAdmin = () => {
           </div>
     </form>
   </div>
-  `
-  
-}
+  `;
+};
 
-export default categoryAddAdmin
+export default categoryAddAdmin;
