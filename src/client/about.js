@@ -1,7 +1,7 @@
 const about = () => {
   return `
   <div class="w-full bg-[#2b2d33]">
-  <div class="max-w-6xl m-auto grid grid-cols-2 gap-4 py-[70px]" id="about">
+  <div class="max-w-6xl m-auto grid grid-cols-1 md:grid-cols-2 px-[20px] md:[px-0] gap-4 py-[70px]" id="about">
       <div class="relative">
           <img class="w-[500px]"
               src="https://res.cloudinary.com/freelencer/image/upload/v1676456962/img-portfolio/image2_xafstp.png"

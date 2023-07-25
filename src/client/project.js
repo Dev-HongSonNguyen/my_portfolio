@@ -38,7 +38,7 @@ const project = () => {
       </div>
       <div class="">
           
-          <div class="grid grid-cols-3 gap-4 py-[30px]">
+          <div class="grid grid-cols-1 md:grid-cols-3 px-[10px] md:px-[0px] gap-4 py-[30px]">
           ${projectList({ project })}
           </div>
       </div>

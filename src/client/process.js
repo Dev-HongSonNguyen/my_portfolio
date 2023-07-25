@@ -10,7 +10,7 @@ const process = () => {
   }, []);
   return `
   <div class="w-full bg-[#232529] py-[100px]">
-        <div class="max-w-6xl m-auto grid grid-cols-3 gap-4">
+        <div class="max-w-6xl m-auto grid grid-cols-1 md:grid-cols-3 px-[30px] md:px-[0px] gap-4">
             ${process
               .map((item) => {
                 return `

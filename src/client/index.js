@@ -8,7 +8,7 @@ import "../../public/css/animation.css";
 const HomePage = () => {
   return `
     <div class="w-full bg-[#232529] py-[10px] fixed top-0 left-0 z-20">
-        <div class="max-w-6xl m-auto md:flex justify-between items-center py-3">
+        <div class="max-w-6xl m-auto md:flex justify-between items-center py-3 px-10 md:px-0">
             <!-- //logo -->
                 <div class="">
                     <a href="#home">
@@ -41,7 +41,7 @@ const HomePage = () => {
         <!-- LOGIN -->
     <!-- PROCESS -->
     <div class="w-full bg-[#2b2d33] py-[100px] mt-[70px]" id="home">
-        <div class="max-w-6xl m-auto md:flex justify-between items-center w-full">
+        <div class="max-w-6xl m-auto md:flex justify-between items-center w-full px-10 md:px-0">
             <div class="md:w-[50%]">
                 <div class="text-[40px] text-[#f75023] font-bold ">
                     <h3 class="">Hello, I'm</h3>
@@ -82,26 +82,26 @@ const HomePage = () => {
                 </div>
             </div>
             <div class="md:w-[50%] pl-[150px] relative z-10">
-                <img class="md:w-[70%]"
+                <img class="md:w-[70%] hidden md:block"
                     src="https://res.cloudinary.com/freelencer/image/upload/v1676456968/img-portfolio/img-1_cmf5v5.png"
                     alt="">
                 <div class="absolute top-0">
-                    <img class="w-[100px]"
+                    <img class="w-[100px] hidden md:block"
                         src="https://res.cloudinary.com/freelencer/image/upload/v1676456961/img-portfolio/img-2_dkxgcs.webp"
                         alt="">
                 </div>
                 <div class="absolute right-[30px] top-[120px]">
-                    <img class="w-[100px]"
+                    <img class="w-[100px] hidden md:block"
                         src="https://res.cloudinary.com/freelencer/image/upload/v1676456963/img-portfolio/img-3_gsjhv3.png"
                         alt="">
                 </div>
                 <div class="absolute bottom-[-50px]">
-                    <img class="w-[100px]"
+                    <img class="w-[100px] hidden md:block"
                         src="https://res.cloudinary.com/freelencer/image/upload/v1676456964/img-portfolio/img-5_kdykym.png"
                         alt="">
                 </div>
                 <div class="absolute right-[70px] top-[400px]">
-                    <img class="w-[100px]"
+                    <img class="w-[100px] hidden md:block"
                         src="https://res.cloudinary.com/freelencer/image/upload/v1676456964/img-portfolio/img-4_rronle.png"
                         alt="">
                 </div>
@@ -118,11 +118,11 @@ const HomePage = () => {
     <!-- SKILL -->
     <div class="bg-[#2b2d33] w-full" style="border-bottom: 1px solid #f8f8ff">
         <div class="max-w-6xl m-auto pt-[50px] pb-[100px]" id="skill">
-            <div class="">
+            <div class="px-[20px] md:px-[0px]">
                 <h3 class="text-center text-[40px] text-[#ffff]">MY SKILLS</h3>
                 <p class="text-center text-[#f75023] pb-[80px] text-[22px]">I Develop Skills Regularly to Keep Me
                     Update</p>
-                <div class="grid grid-cols-4 gap-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 px-[20px] md:px-[0px] gap-4">
                     <div class="flex justify-center">
                         <div class="">
                             <div class="bg-[#232529] w-[150px] p-10 rounded-[50%] hover:scale-110"

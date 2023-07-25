@@ -26,7 +26,7 @@ const contact = () => {
   });
   return `
     <div class="w-full bg-[#2b2d33]">
-        <div class="max-w-6xl m-auto py-[50px] relative" id="contact">
+        <div class="max-w-6xl m-auto py-[50px] relative px-[10px] md:px-[0px]" id="contact">
             <div class="pb-[100px]">
                 <div class="text-center">
                     <p class="text-[22px] text-[#f75023]">Contact me</p>
@@ -39,7 +39,7 @@ const contact = () => {
                         p.m. VN, Monday through Friday</p>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="">
                     <div class="flex items-center">
                         <div class="bg-[#f75023] p-[40px] rounded-[50%]">
@@ -53,7 +53,7 @@ const contact = () => {
                         </div>
                         <div class="pl-[20px]">
                             <h4 class="text-[#ffff] text-[32px]">Address</h4>
-                            <span class="text-[#b9b5c9] text-[16px]">VietNam</span>
+                            <span class="text-[#b9b5c9] text-[12px] md:text-[16px]">VietNam</span>
                         </div>
                     </div>
                     <div class="flex items-center my-[30px]">
@@ -66,7 +66,7 @@ const contact = () => {
                         </div>
                         <div class="pl-[20px]">
                             <h4 class="text-[#ffff] text-[32px]">Email</h4>
-                            <span class="text-[#b9b5c9] text-[16px]">nguyenhongson20433@gmail.com</span>
+                            <span class="text-[#b9b5c9] text-[12px] md:text-[16px]">nguyenhongson20433@gmail.com</span>
                         </div>
                     </div>
                     <div class="flex items-center">
@@ -79,7 +79,7 @@ const contact = () => {
                         </div>
                         <div class="pl-[20px]">
                             <h4 class="text-[#ffff] text-[32px]">Phone</h4>
-                            <span class="text-[#b9b5c9] text-[16px]">+84 0384707136</span>
+                            <span class="text-[#b9b5c9] text-[12px] md:text-[16px]">+84 0384707136</span>
                         </div>
                     </div>
                 </div>
@@ -108,11 +108,11 @@ const contact = () => {
                     </form>
                 </div>
             </div>
-            <div class="absolute right-0 bottom-[30px]">
+            <div class="absolute right-0 bottom-[30px] ">
                 <img src="https://res.cloudinary.com/freelencer/image/upload/v1676456957/img-portfolio/img-13_fssqox.png"
                     alt="">
             </div>
-            <div class="absolute left-0 top-[30px]">
+            <div class="absolute left-0 top-[30px] hidden md:block">
                 <img src="https://res.cloudinary.com/freelencer/image/upload/v1676456958/img-portfolio/img-15_wnasup.png"
                     alt="">
             </div>
