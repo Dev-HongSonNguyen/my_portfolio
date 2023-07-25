@@ -19,7 +19,7 @@ const processAddAdmin = () => {
         .then(() => router.navigate("/admin/processListAdmin"))
         .catch(() => alert("Add to fail !"));
     });
-  }, []);
+  });
   return `
     ${headerAdmin()}
     <div class="max-w-6xl m-auto">

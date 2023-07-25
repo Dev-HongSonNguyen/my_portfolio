@@ -16,16 +16,20 @@ const projectEditAdmin = ({ id }) => {
     const image = document.querySelector("#image_project");
     const role = document.querySelector("#role");
     const des = document.querySelector("#des");
+    const demo = document.querySelector("#demo");
+    const source = document.querySelector("#source");
     const category = document.querySelector("#category");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       const formData = {
         name: nameProject.value,
         date: dateProject.value,
-        role: role.value,
         image: image.value,
+        role: role.value,
         des: des.value,
-        categoryId: category.value,
+        source: source.value,
+        demo: demo.value,
+        categoryId: Number(category.value),
       };
       axios
         .put(
@@ -35,7 +39,7 @@ const projectEditAdmin = ({ id }) => {
         .then(() => router.navigate("/admin/projectAdmin"))
         .catch(() => alert("Edit to fail !"));
     });
-  }, []);
+  });
   return `
     ${headerAdmin()}
     <div class="max-w-6xl m-auto">
@@ -66,15 +70,21 @@ const projectEditAdmin = ({ id }) => {
               }">
           </div>
           <div class="">
-              <label for="" class="block text-[#ffff]">Preview</label>
-              <input id="preview" type="text" class="border w-full outline-none p-2" value="${
-                project.preview
-              }">
-          </div>
-          <div class="">
               <label for="" class="block text-[#ffff]">Description</label>
               <input id="des" type="text" class="border w-full outline-none p-2" value="${
                 project.des
+              }">
+          </div>
+          <div class="">
+              <label for="" class="block text-[#ffff]">Source</label>
+              <input id="source" type="text" class="border w-full outline-none p-2" value="${
+                project.source
+              }">
+          </div>
+          <div class="">
+              <label for="" class="block text-[#ffff]">Demo</label>
+              <input id="demo" type="text" class="border w-full outline-none p-2" value="${
+                project.demo
               }">
           </div>
           <div class="">

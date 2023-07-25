@@ -16,7 +16,7 @@ const categoryAddAdmin = () => {
         .then(() => router.navigate("/admin/categoryListAdmin"))
         .catch(() => alert("Add to Fail !"));
     });
-  }, []);
+  });
   return `
   ${headerAdmin()}
   <div class="max-w-6xl m-auto">

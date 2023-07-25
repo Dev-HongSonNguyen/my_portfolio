@@ -21,7 +21,7 @@ const aboutEditAdmin = ({ id }) => {
         .then(() => router.navigate("/admin/aboutAdmin"))
         .catch(() => alert("Edit to Fail !"));
     });
-  }, []);
+  });
   return `<div>
   <div class="max-w-6xl m-auto">
       <form action="" id="form">

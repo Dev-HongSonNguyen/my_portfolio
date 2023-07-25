@@ -25,7 +25,7 @@ const processEditAdmin = ({ id }) => {
         .then(() => router.navigate("/admin/processListAdmin"))
         .catch(() => alert("Edit to Fail !"));
     });
-  }, []);
+  });
   return `
   ${headerAdmin()}
     <div class="max-w-6xl m-auto">

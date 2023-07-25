@@ -16,7 +16,7 @@ const aboutAddAdmin = () => {
         .then(() => router.navigate("/admin/aboutAdmin"))
         .catch(() => alert("Add About Me to Fail !"));
     });
-  }, []);
+  });
   return `<div>
   ${headerAdmin()}
   <div class="max-w-6xl m-auto">

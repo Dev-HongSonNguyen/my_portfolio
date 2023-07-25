@@ -1,29 +1,35 @@
 import axios from "axios";
-import headerAdmin from "../../components/headerAdmin"
-import { router, useEffect, useState } from "../lib"
+import headerAdmin from "../../components/headerAdmin";
+import { router, useEffect, useState } from "../lib";
 
-const userEdit = ({id}) => {
-    const [admin, setAdmin] = useState({});
-    useEffect(()=>{
-        axios.get(`https://s2qbne-8080.preview.csb.app/api/APIadmin/${id}`).then(({data})=>setAdmin(data))
-    },[])
-    useEffect(()=>{
-        const form_edit = document.querySelector("#form-edit");
-        const name = document.querySelector("#name");
-        const email = document.querySelector("#email");
-        const password = document.querySelector("#password");
-        form_edit.addEventListener("submit", function(e){
-            e.preventDefault();
-            const newAcount = {
-                name: name.value,
-                email: email.value,
-                password: password.value,
-            }
-            axios.put(`https://s2qbne-8080.preview.csb.app/api/APIadmin/${id}`, newAcount)
-            .then(()=> router.navigate("/admin/userAdmin"))
-            .catch(()=> alert("Edit to Fail !"))
-        })
-    },[])
+const userEdit = ({ id }) => {
+  const [admin, setAdmin] = useState({});
+  useEffect(() => {
+    axios
+      .get(`https://s2qbne-8080.preview.csb.app/api/APIadmin/${id}`)
+      .then(({ data }) => setAdmin(data));
+  }, []);
+  useEffect(() => {
+    const form_edit = document.querySelector("#form-edit");
+    const name = document.querySelector("#name");
+    const email = document.querySelector("#email");
+    const password = document.querySelector("#password");
+    form_edit.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const newAcount = {
+        name: name.value,
+        email: email.value,
+        password: password.value,
+      };
+      axios
+        .put(
+          `https://s2qbne-8080.preview.csb.app/api/APIadmin/${id}`,
+          newAcount
+        )
+        .then(() => router.navigate("/admin/userAdmin"))
+        .catch(() => alert("Edit to Fail !"));
+    });
+  });
   return `
   ${headerAdmin()}
   <div class="max-w-6xl m-auto">
@@ -31,15 +37,21 @@ const userEdit = ({id}) => {
             <h1 class="text-center text-[#f75023] font-bold pt-5">EDIT ACOUNT ADMIN</h1>
             <div>
                 <label for="" class="block text-[#ffff]">Name</label>
-                <input id="name" type="text" class="border w-full outline-none p-2" value="${admin.name}">
+                <input id="name" type="text" class="border w-full outline-none p-2" value="${
+                  admin.name
+                }">
             </div>
             <div class="">
                 <label for="" class="block text-[#ffff]">Email</label>
-                <input id="email" type="text" class="border w-full outline-none p-2" value="${admin.email}">
+                <input id="email" type="text" class="border w-full outline-none p-2" value="${
+                  admin.email
+                }">
             </div>
             <div class="">
                 <label for="" class="block text-[#ffff]">Password</label>
-                <input id="password" type=" text" class="border w-full outline-none p-2" value="${admin.password}">
+                <input id="password" type=" text" class="border w-full outline-none p-2" value="${
+                  admin.password
+                }">
             </div>
             <div class="">
                 <input type="submit"
@@ -47,8 +59,7 @@ const userEdit = ({id}) => {
             </div>
         </form>
     </div>
-  `
-  
-}
+  `;
+};
 
-export default userEdit
+export default userEdit;

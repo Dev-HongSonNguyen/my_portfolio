@@ -23,7 +23,7 @@ const projectListAdmin = () => {
           });
       });
     }
-  }, []);
+  });
   return `
     ${headerAdmin()}
     <div class="max-w-6xl m-auto my-5">
@@ -63,7 +63,7 @@ const projectListAdmin = () => {
                     <td class="border px-2 text-[#ffff]">
                         <button data-id=${
                           item.id
-                        } class="bg-red-600 p-5 py-2 text-[#ffff] btn_delete">DELETE</button>
+                        } class="bg-red-600 p-5 py-2 text-[#ffff] btn_delete mb-[20px]">DELETE</button>
                         <a href="/admin/projectEditAdmin/${
                           item.id
                         }" class="bg-blue-900 p-5 py-[11px] text-[#ffff]">SETTING</a>
