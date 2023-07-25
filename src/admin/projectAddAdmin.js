@@ -40,7 +40,7 @@ const projectAddAdmin = () => {
         .then(() => router.navigate("/admin/projectAdmin"))
         .catch(() => alert("Add to Fail !"));
     });
-  },[]);
+  });
 
   const uploadFiles = async (files) => {
     if (files) {

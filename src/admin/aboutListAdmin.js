@@ -1,23 +1,27 @@
 import axios from "axios";
-import headerAdmin from "../../components/headerAdmin"
-import { useEffect, useState } from "../lib"
+import headerAdmin from "../../components/headerAdmin";
+import { useEffect, useState } from "../lib";
 const aboutListAdmin = () => {
-    const[aboutMe, setAboutMe] = useState([]);
-    useEffect(()=>{
-        axios.get("https://s2qbne-8080.preview.csb.app/api/APIabout").then(({data})=> setAboutMe(data))
-    },[])
-    useEffect(()=>{
-        const btn_delete = document.querySelectorAll(".btn_delete");
-        for(let btn of btn_delete){
-            btn.addEventListener("click", function(){
-                const idOr = this.dataset.id;
-                axios.delete(`https://s2qbne-8080.preview.csb.app/api/APIabout/${idOr}`).then(()=>{
-                    const newAbout = aboutMe.filter((item)=>item.id != idOr)
-                    setAboutMe(newAbout);
-                })
-            })
-        }
-    },[])
+  const [aboutMe, setAboutMe] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://s2qbne-8080.preview.csb.app/api/APIabout")
+      .then(({ data }) => setAboutMe(data));
+  }, []);
+  useEffect(() => {
+    const btn_delete = document.querySelectorAll(".btn_delete");
+    for (let btn of btn_delete) {
+      btn.addEventListener("click", function () {
+        const idOr = this.dataset.id;
+        axios
+          .delete(`https://s2qbne-8080.preview.csb.app/api/APIabout/${idOr}`)
+          .then(() => {
+            const newAbout = aboutMe.filter((item) => item.id != idOr);
+            setAboutMe(newAbout);
+          });
+      });
+    }
+  });
   return `
   ${headerAdmin()}
   <div class="max-w-6xl m-auto my-5">
@@ -28,7 +32,7 @@ const aboutListAdmin = () => {
       <th class="border text-[#ffff]">ABOUT ME</th>
       <th class="border text-[#ffff]">ACTION</th>
   </thead>
-  ${aboutMe.map(function(item){
+  ${aboutMe.map(function (item) {
     return `
     <tbody>
     <tr class="text-center">
@@ -39,11 +43,10 @@ const aboutListAdmin = () => {
         </td>
     </tr>
 </tbody>
-    `
+    `;
   })}
     </table>
-    </div>`
-  
-}
+    </div>`;
+};
 
-export default aboutListAdmin
+export default aboutListAdmin;
