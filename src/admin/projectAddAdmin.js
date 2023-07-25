@@ -1,49 +1,53 @@
 import axios from "axios";
 import headerAdmin from "../../components/headerAdmin";
-import { router, useEffect, useState } from "../lib"
+import { router, useEffect, useState } from "../lib";
 
-const projectAddAdmin = ()=>{
+const projectAddAdmin = () => {
   const [category, setCategory] = useState([]);
-  useEffect(()=>{
-    axios.get("https://s2qbne-8080.preview.csb.app/api/categories").then(({data})=> setCategory(data))
-  },[])
-  useEffect(function(){
+  useEffect(() => {
+    axios
+      .get("https://s2qbne-8080.preview.csb.app/api/categories")
+      .then(({ data }) => setCategory(data));
+  }, []);
+  useEffect(function () {
     const form = document.querySelector("#form");
     const nameProject = document.querySelector("#name_project");
     const dateProject = document.querySelector("#date");
     const image = document.querySelector("#image_project");
     const role = document.querySelector("#role");
-    const preview = document.querySelector("#preview");
     const des = document.querySelector("#des");
-    const category = document.querySelector("#category")
-    form.addEventListener("submit",async function(e){
+    const category = document.querySelector("#category");
+    const source = document.querySelector("#source");
+    const demo = document.querySelector("#demo");
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      const urls = await uploadFiles(image.files)
-
+      const urls = await uploadFiles(image.files);
 
       const projectAdd = {
-        name: nameProject.value, 
+        name: nameProject.value,
         date: dateProject.value,
+        image: image.value,
         role: role.value,
-        preview: preview.value,
         des: des.value,
+        source: source.value,
+        demo: demo.value,
         categoryId: Number(category.value),
-        gallery: urls,
-      }
-      axios.post("https://s2qbne-8080.preview.csb.app/api/APIproject", projectAdd)
-      .then(()=> alert ("Thêm thành công !"))
-      .then(()=> router.navigate("/admin/projectAdmin"))
-      .catch(()=> alert("Add to Fail !"))
-    })
-  });
+      };
+      axios
+        .post("https://s2qbne-8080.preview.csb.app/api/APIproject", projectAdd)
+        .then(() => alert("Thêm thành công !"))
+        .then(() => router.navigate("/admin/projectAdmin"))
+        .catch(() => alert("Add to Fail !"));
+    });
+  },[]);
 
-  const uploadFiles = async (files)=>{
-    if(files){
+  const uploadFiles = async (files) => {
+    if (files) {
       const cloud_name = "dwzh9i6xf";
-      const preset_name ="duanECMA";
+      const preset_name = "duanECMA";
       const folder_name = "duanECMA_portforlio";
-      const urls= [];
+      const urls = [];
       const api = `https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`;
 
       const formData = new FormData();
@@ -51,19 +55,19 @@ const projectAddAdmin = ()=>{
       formData.append("upload_preset", preset_name);
       formData.append("folder", folder_name);
 
-      for(const file of files){
-        formData.append('file', file);
+      for (const file of files) {
+        formData.append("file", file);
         const response = await axios.post(api, formData, {
-          headers:{
-            "Content-Type": "multipart/form-data"
+          headers: {
+            "Content-Type": "multipart/form-data",
           },
-        })
-        urls.push(response.data.secure_url) 
+        });
+        urls.push(response.data.secure_url);
       }
       return urls;
-      }
+    }
   };
-    return `
+  return `
     ${headerAdmin()}
     <div class="max-w-6xl m-auto">
       <form action="" id="form">
@@ -74,7 +78,7 @@ const projectAddAdmin = ()=>{
           </div>
           <div>
               <label for="" class="block text-[#ffff]">Image</label>
-              <input id="image_project" type="file" class="border w-full outline-none p-2 text-[#ffff]" multiple>
+              <input id="image_project" type="text" class="border w-full outline-none p-2" multiple>
           </div>
           <div class="">
               <label for="" class="block text-[#ffff]">Date</label>
@@ -87,16 +91,22 @@ const projectAddAdmin = ()=>{
           <div class="">
               <label for="" class="block text-[#ffff]">Category</label>
               <select name="" id="category" class="w-[200px]">
-              ${category.map((item)=>{
-                return `
+              ${category
+                .map((item) => {
+                  return `
                 <option id="category" value="${item.id}">${item.name}</option>
-                `
-              }).join("")}
+                `;
+                })
+                .join("")}
               </select>
           </div>
           <div class="">
-              <label for="" class="block text-[#ffff]">Preview</label>
-              <input id="preview" type="text" class="border w-full outline-none p-2">
+              <label for="" class="block text-[#ffff]">Source code</label>
+              <input id="source" type="text" class="border w-full outline-none p-2">
+          </div>
+          <div class="">
+              <label for="" class="block text-[#ffff]">Link Demo</label>
+              <input id="demo" type="text" class="border w-full outline-none p-2">
           </div>
           <div class="">
               <label for="" class="block text-[#ffff]">Description</label>
@@ -108,6 +118,6 @@ const projectAddAdmin = ()=>{
           </div>
     </form>
   </div>
-  `
-}
-export default projectAddAdmin
+  `;
+};
+export default projectAddAdmin;

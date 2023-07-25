@@ -1,29 +1,30 @@
 import axios from "axios";
 import { router, useEffect } from "../lib";
 
-const contact = ()=>{
-    useEffect(()=>{
-        const form = document.querySelector("#form");
-        const name = document.querySelector("#name");
-        const email = document.querySelector("#email");
-        const phone = document.querySelector("#phone");
-        const subject = document.querySelector("#subject");
-        const note = document.querySelector("#note");
-        form.addEventListener("submit", function(e){
-            e.preventDefault();
-            const newUser = {
-                name: name.value,
-                email: email.value,
-                phone: phone.value,
-                subject: subject.value,
-                note: note.value,
-            }
-            axios.post("https://s2qbne-8080.preview.csb.app/api/APIusers", newUser)
-            .then(()=> alert("Submit successfully !"))
-            .catch(()=> alert("Submit to fail !"))
-        })
-    })
-    return `
+const contact = () => {
+  useEffect(() => {
+    const form = document.querySelector("#form");
+    const name = document.querySelector("#name");
+    const email = document.querySelector("#email");
+    const phone = document.querySelector("#phone");
+    const subject = document.querySelector("#subject");
+    const note = document.querySelector("#note");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const newUser = {
+        name: name.value,
+        email: email.value,
+        phone: phone.value,
+        subject: subject.value,
+        note: note.value,
+      };
+      axios
+        .post("https://s2qbne-8080.preview.csb.app/api/APIusers", newUser)
+        .then(() => alert("Submit successfully !"))
+        .catch(() => alert("Submit to fail !"));
+    });
+  });
+  return `
     <div class="w-full bg-[#2b2d33]">
         <div class="max-w-6xl m-auto py-[50px] relative" id="contact">
             <div class="pb-[100px]">
@@ -117,6 +118,6 @@ const contact = ()=>{
             </div>
         </div>
     </div>
-    `
-}
+    `;
+};
 export default contact;

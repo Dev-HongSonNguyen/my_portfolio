@@ -1,11 +1,12 @@
 import axios from "axios";
-import { router, useEffect, useState } from "../lib"
+import { router, useEffect, useState } from "../lib";
 import process from "./process";
 import about from "./about";
 import contact from "./contact";
 import project from "./project";
-const HomePage = ()=>{
-    return `
+import "../../public/css/animation.css";
+const HomePage = () => {
+  return `
     <div class="w-full bg-[#232529] py-[10px] fixed top-0 left-0 z-20">
         <div class="max-w-6xl m-auto md:flex justify-between items-center py-3">
             <!-- //logo -->
@@ -33,8 +34,6 @@ const HomePage = ()=>{
                                 class="text-[16px] text-[#ffff] hover:text-[#f75023] tra font-bold tracking-[1px]"
                                 href="#skill">Skill</a>
                         </li>
-                        <li><a href="/admin/projectAdmin" id="btn_open" class="bg-[#f75023] text-[#ffff] tra font-bold tracking-[1px] border px-10 py-2 border-[#f75023] hover:bg-[#2b2d33] rounded-md block">ADMIN</a>
-                        </li>
                     </ul>
                 </div>
         </div>
@@ -43,7 +42,7 @@ const HomePage = ()=>{
     <!-- PROCESS -->
     <div class="w-full bg-[#2b2d33] py-[100px] mt-[70px]" id="home">
         <div class="max-w-6xl m-auto md:flex justify-between items-center w-full">
-            <div class="md:w-[50%] ">
+            <div class="md:w-[50%]">
                 <div class="text-[40px] text-[#f75023] font-bold ">
                     <h3 class="">Hello, I'm</h3>
                 </div>
@@ -87,21 +86,21 @@ const HomePage = ()=>{
                     src="https://res.cloudinary.com/freelencer/image/upload/v1676456968/img-portfolio/img-1_cmf5v5.png"
                     alt="">
                 <div class="absolute top-0">
-                    <img class="w-[100px] hidden md:block"
+                    <img class="w-[100px]"
                         src="https://res.cloudinary.com/freelencer/image/upload/v1676456961/img-portfolio/img-2_dkxgcs.webp"
                         alt="">
                 </div>
-                <div class="absolute right-[30px] top-[120px] hidden md:block">
+                <div class="absolute right-[30px] top-[120px]">
                     <img class="w-[100px]"
                         src="https://res.cloudinary.com/freelencer/image/upload/v1676456963/img-portfolio/img-3_gsjhv3.png"
                         alt="">
                 </div>
-                <div class="absolute bottom-[-50px] hidden md:block">
+                <div class="absolute bottom-[-50px]">
                     <img class="w-[100px]"
                         src="https://res.cloudinary.com/freelencer/image/upload/v1676456964/img-portfolio/img-5_kdykym.png"
                         alt="">
                 </div>
-                <div class="absolute right-[70px] top-[400px] hidden md:block">
+                <div class="absolute right-[70px] top-[400px]">
                     <img class="w-[100px]"
                         src="https://res.cloudinary.com/freelencer/image/upload/v1676456964/img-portfolio/img-4_rronle.png"
                         alt="">
@@ -128,7 +127,7 @@ const HomePage = ()=>{
                         <div class="">
                             <div class="bg-[#232529] w-[150px] p-10 rounded-[50%] hover:scale-110"
                                 style="transition: all 0.5s ease-in-out">
-                                <img class=" w-[150px]" src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1676632402/duanECMA_portforlio/download_dchfop.png" alt="">
+                                <img class=" w-[150px] h-[70px]" src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1689227172/duanECMA_portforlio/html_ggvpo4.png" alt="">
                             </div>
                             <div class="flex justify-center">
                                 <span class="text-[#ffff] text-[24px] pt-5">HTML</span>
@@ -139,7 +138,7 @@ const HomePage = ()=>{
                         <div class="">
                             <div class="bg-[#232529] w-[150px] p-10 rounded-[50%] hover:scale-110"
                                 style="transition: all 0.5s ease-in-out">
-                                <img class=" w-[150px]" src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1676632402/duanECMA_portforlio/download_1_gtp8qq.png" alt="">
+                                <img class=" w-[150px] h-[70px]" src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1689227468/duanECMA_portforlio/css_bubbz0.png" alt="">
                             </div>
                             <div class="flex justify-center">
                                 <span class="text-[#ffff] text-[24px] pt-5">CSS</span>
@@ -150,7 +149,7 @@ const HomePage = ()=>{
                         <div class="">
                             <div class="bg-[#232529] w-[150px] p-10 rounded-[50%] hover:scale-110"
                                 style="transition: all 0.5s ease-in-out">
-                                <img class=" w-[150px]" src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1676634692/duanECMA_portforlio/download_2_n57xgv.png" alt="">
+                                <img class=" w-[150px] h-[70px]" src="https://res.cloudinary.com/freelencer/image/upload/v1676456961/img-portfolio/img-2_dkxgcs.webp" alt="">
                             </div>
                             <div class="flex justify-center">
                                 <span class="text-[#ffff] text-[24px] pt-5">JAVACRIPT</span>
@@ -161,10 +160,10 @@ const HomePage = ()=>{
                         <div class="">
                             <div class="bg-[#232529] w-[150px] p-10 rounded-[50%] hover:scale-110"
                                 style="transition: all 0.5s ease-in-out">
-                                <img class=" w-[150px]" src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1676632403/duanECMA_portforlio/java.e67de2f7f6d0601a499a_vwh9dd.png" alt="">
+                                <img class=" w-[150px] h-[70px]" src="https://anhcoder03.vercel.app/images/react.png" alt="">
                             </div>
                             <div class="flex justify-center">
-                                <span class="text-[#ffff] text-[24px] pt-5">JAVA</span>
+                                <span class="text-[#ffff] text-[24px] pt-5">REACTJS</span>
                             </div>
                         </div>
                     </div>
@@ -172,7 +171,29 @@ const HomePage = ()=>{
                         <div class="">
                             <div class="bg-[#232529] w-[150px] p-10 rounded-[50%] hover:scale-110"
                                 style="transition: all 0.5s ease-in-out">
-                                <img class=" w-[150px]" src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1676632402/duanECMA_portforlio/bootstrap.4bdf973467a3db0c433f_aslzwl.png" alt="">
+                                <img class=" w-[150px] h-[70px]" src="https://anhcoder03.vercel.app/images/typescript.png" alt="">
+                            </div>
+                            <div class="flex justify-center">
+                                <span class="text-[#ffff] text-[24px] pt-5">TYPESCRIPT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="">
+                            <div class="bg-[#232529] w-[150px] p-10 rounded-[50%] hover:scale-110"
+                                style="transition: all 0.5s ease-in-out">
+                                <img class=" w-[150px] h-[70px]" src="https://anhcoder03.vercel.app/images/nodejs.png" alt="">
+                            </div>
+                            <div class="flex justify-center">
+                                <span class="text-[#ffff] text-[24px] pt-5">NODE JS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="">
+                            <div class="bg-[#232529] w-[150px] p-10 rounded-[50%] hover:scale-110"
+                                style="transition: all 0.5s ease-in-out">
+                                <img class=" w-[150px] h-[70px]" src="https://anhcoder03.vercel.app/images/boostrap.png" alt="">
                             </div>
                             <div class="flex justify-center">
                                 <span class="text-[#ffff] text-[24px] pt-5">BOOTSTRAP</span>
@@ -183,10 +204,10 @@ const HomePage = ()=>{
                         <div class="">
                             <div class="bg-[#232529] w-[150px] p-10 rounded-[50%] hover:scale-110"
                                 style="transition: all 0.5s ease-in-out">
-                                <img class=" w-[150px]" src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1676632403/duanECMA_portforlio/react.6db2265afd7a1041c977_e6zhun.png" alt="">
+                                <img class=" w-[150px] h-[70px]" src="https://anhcoder03.vercel.app/images/tailwind.png" alt="">
                             </div>
                             <div class="flex justify-center">
-                                <span class="text-[#ffff] text-[24px] pt-5">REACTJS</span>
+                                <span class="text-[#ffff] text-[24px] pt-5">TAILWIND CSS</span>
                             </div>
                         </div>
                     </div>
@@ -224,10 +245,10 @@ const HomePage = ()=>{
                 </ul>
             </div>
             <div class="text-center pt-5">
-                <span class="text-[#ffff]">© 2023 Hong Son Nguyen. All Rights Reserved</span>
+                <a href="/admin/projectAdmin"><span class="text-[#ffff]">© 2023 Hong Son Nguyen. All Rights Reserved</span></a>
             </div>
         </div>
     </div>
-    `
-}
-export default HomePage
+    `;
+};
+export default HomePage;

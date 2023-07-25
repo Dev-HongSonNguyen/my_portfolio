@@ -1,15 +1,18 @@
 import axios from "axios";
-import { useEffect, useState } from "../lib"
+import { useEffect, useState } from "../lib";
 
 const process = () => {
-    const [process, setProcess] = useState([]);
-    useEffect(()=>{
-        axios.get("https://s2qbne-8080.preview.csb.app/api/APIprocess").then(({data})=> setProcess(data))
-    },[])
+  const [process, setProcess] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://s2qbne-8080.preview.csb.app/api/APIprocess")
+      .then(({ data }) => setProcess(data));
+  }, []);
   return `
   <div class="w-full bg-[#232529] py-[100px]">
         <div class="max-w-6xl m-auto grid grid-cols-3 gap-4">
-            ${process.map((item)=>{
+            ${process
+              .map((item) => {
                 return `
                     <div class="">
                         <div class="flex justify-center relative items-center">
@@ -29,12 +32,12 @@ const process = () => {
                             </p>
                         </div>
                     </div>
-                `
-            }).join("")}
+                `;
+              })
+              .join("")}
         </div>
     </div>
-  `
-  
-}
+  `;
+};
 
-export default process
+export default process;

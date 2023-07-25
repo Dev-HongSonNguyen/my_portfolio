@@ -40,6 +40,6 @@ const about = () => {
       </div>
   </div>
 </div>
-  `
-}
-export default about
+  `;
+};
+export default about;

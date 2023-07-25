@@ -1,19 +1,41 @@
 {
-  "APIproject": [
+  "project": [
     {
-      "name": "NỘI THẤT KOSI NÔI THẤT",
+      "name": "PORFOLIO",
       "date": "04/06/2002",
+      "image": "https://res.cloudinary.com/dwzh9i6xf/image/upload/v1689227589/duanECMA_portforlio/png-clipart-javascript-computer-icons-software-developer-cascading-style-sheets-javascript-logo-angle-text_zx0isd.png",
+      "categoryId": 1,
+      "git": "https://github.com/Dev-HongSonNguyen/Portfolio",
+      "demo": "https://myportfolio-devhongsonnguyen03.vercel.app/",
       "id": 5
-    },
-    {
-      "name": "WEBSITE TRƯỜNG TRUNG HỌC PHỔ THÔNG FPT ",
-      "date": "16/02/2023",
-      "id": 6
-    },
-    {
-      "name": "Landing Page LandWind",
-      "date": "16/02/2023",
-      "id": 7
     }
+  ],
+  "process": [
+    {
+      "id": 1,
+      "name": "Hard-Working",
+      "description": "Most common methods for designing websites that work well on desktop is responsive and adaptive design."
+    },
+    {
+      "id": 2,
+      "name": "Sociable",
+      "description": "Most common methods for designing websites that work well on desktop is responsive and adaptive design."
+    },
+    {
+      "id": 3,
+      "name": "Ambitious",
+      "description": "Most common methods for designing websites that work well on desktop is responsive and adaptive design."
+    }
+  ],
+  "category": [
+      {
+        "id": 1,
+        "name": "HTML/CSS/REACTJS"
+      },
+      {
+        "id": 2,
+        "name": "HTML/CSS/REACTJS"
+      }
   ]
+  
 }

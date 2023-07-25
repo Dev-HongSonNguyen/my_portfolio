@@ -1,12 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "../lib"
+import { useEffect, useState } from "../lib";
 
-const detail = ({id}) => {
-    const [detail, setDetail] = useState({});
-    useEffect(function(){
-        axios.get(`https://s2qbne-8080.preview.csb.app/api/APIproject/${id}`).then(({data})=>setDetail(data))
-    },[])
-
+const detail = ({ id }) => {
+  const [detail, setDetail] = useState({});
+  useEffect(function () {
+    axios
+      .get(`https://s2qbne-8080.csb.app/api/APIproject/${id}`)
+      .then(({ data }) => setDetail(data));
+  }, []);
+  console.log(detail);
   return `
   <div class="w-full bg-[#232529] py-[10px] z-20" id="backtop">
         <a href="/" class="text-[#ffff] absolute bg-[#f75023] left-[10px] top-[10px] p-3">
@@ -23,7 +25,7 @@ const detail = ({id}) => {
                                 <h1 style="border-bottom: 3px solid #f75023;"
                                     class="text-[#f75023] text-[24px] py-2 tracking-wider">IMAGE PROJECT
                                 </h1>
-                                <img src="${detail.gallery}" alt="" class="w-full pt-5">
+                                <img src="${detail.image}" alt="" class="w-full pt-5">
                             </div>
                         </div>
                         <div class="px-[25px] py-3">
@@ -45,9 +47,13 @@ const detail = ({id}) => {
                                         <span class="text-[#f75023] text-[12px]">${detail.role}</span>
                                     </li>
                                     <li class="text-[#ffff] text-[12px]">
-                                        Preview:
-                                        <a href="${detail.preview}"
-                                            class="text-[#f75023] text-[12px]">${detail.preview}</a>
+                                        Source code:
+                                        <a href="${detail.source}"
+                                            class="text-[#f75023] text-[12px]">${detail.source}</a>
+                                    </li>
+                                    <li class="text-[#ffff] text-[12px]">
+                                        <a href="${detail.demo}"
+                                            class="text-[#f75023] text-[12px]">Demo</a>
                                     </li>
                                 </ul>
                             </div>
@@ -57,6 +63,6 @@ const detail = ({id}) => {
             </div>
         </div>
     </div>
-  `
-}
-export default detail
+  `;
+};
+export default detail;

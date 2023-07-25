@@ -1,24 +1,27 @@
 import axios from "axios";
-import { router, useEffect, useState } from "../lib"
+import { router, useEffect, useState } from "../lib";
 
-const aboutEditAdmin = ({id}) => {
-    const[about, setAbout] = useState({});
-    useEffect(()=>{
-        axios.get(`https://s2qbne-8080.preview.csb.app/api/APIabout/${id}`).then(({data})=> setAbout(data))
-    },[])
-    useEffect(()=>{
-        const form = document.querySelector("#form");
-        const about = document.querySelector("#about");
-        form.addEventListener("submit", function(e){
-            e.preventDefault();
-            const formAbout = {
-                about: about.value,
-            };
-            axios.put(`https://s2qbne-8080.preview.csb.app/api/APIabout/${id}`, formAbout)
-            .then(()=> router.navigate("/admin/aboutAdmin"))
-            .catch(()=> alert("Edit to Fail !"))
-        })
-    })
+const aboutEditAdmin = ({ id }) => {
+  const [about, setAbout] = useState({});
+  useEffect(() => {
+    axios
+      .get(`https://s2qbne-8080.csb.app/api/APIabout/${id}`)
+      .then(({ data }) => setAbout(data));
+  }, []);
+  useEffect(() => {
+    const form = document.querySelector("#form");
+    const about = document.querySelector("#about");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formAbout = {
+        about: about.value,
+      };
+      axios
+        .put(`https://s2qbne-8080.csb.app/api/APIabout/${id}`, formAbout)
+        .then(() => router.navigate("/admin/aboutAdmin"))
+        .catch(() => alert("Edit to Fail !"));
+    });
+  }, []);
   return `<div>
   <div class="max-w-6xl m-auto">
       <form action="" id="form">
@@ -33,6 +36,6 @@ const aboutEditAdmin = ({id}) => {
           </div>
     </form>
   </div>
-  </div>`
-}
-export default aboutEditAdmin
+  </div>`;
+};
+export default aboutEditAdmin;
