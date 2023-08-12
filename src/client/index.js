@@ -6,14 +6,14 @@ import contact from "./contact";
 import project from "./project";
 import "../../public/css/animation.css";
 const HomePage = () => {
-  return `
+    return `
     <div class="w-full bg-[#232529] py-[10px] fixed top-0 left-0 z-20">
         <div class="max-w-6xl m-auto md:flex justify-between items-center py-3 px-10 md:px-0">
             <!-- //logo -->
                 <div class="">
                     <a href="#home">
                         <!-- <img class="w-[120px]" src="./img/logo-1.png" alt=""> -->
-                        <h1 class="text-[#ffff] text-[18px]">DEV <span class="text-[#f75023]">HONG SON NGUYEN</span></h1>
+                        <h1 class="text-[#ffff] text-[18px] font-bold">DEV <span class="text-[#f75023]">HONG SON NGUYEN</span></h1>
                     </a>
                 </div>
             <!-- //menu -->
@@ -47,7 +47,7 @@ const HomePage = () => {
                     <h3 class="">Hello, I'm</h3>
                 </div>
                 <div class="text-6xl text-[#ffff]">
-                    <h3>Hong Son Nguyen</h3>
+                    <h3 class="animate-charcter">Hong Son Nguyen</h3>
                 </div>
                 <div class="mt-10">
                     <p class="text-[20px] text-[#ffff]">A

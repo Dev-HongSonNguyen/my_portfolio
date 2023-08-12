@@ -1,19 +1,28 @@
-@keyframes showTop {
-  from {
-    opacity: 0;
-    transform: translate(0, -100px);
-  }
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #f75023 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+@keyframes textclip {
   to {
-    opacity: 1;
-    transform: translate(0, 0);
+    background-position: 200% center;
   }
-}
-.animationTop {
-  animation: showTop 1.5s ease-in-out 1 forwards;
-}
-.delay-01 {
-  animation-delay: 0.1s !important;
-}
-.delay-02 {
-  animation-delay: 0.2s !important;
 }
