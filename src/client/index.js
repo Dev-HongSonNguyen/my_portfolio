@@ -231,7 +231,7 @@ const HomePage = () => {
         <div class="py-7">
             <div class="">
                 <ul class="flex items-center justify-center">
-                    <li class="px-3"><a href="#" class="text-[#ffff]"><i
+                    <li class="px-3"><a href="" class="text-[#ffff]"><i
                                 class="fab fa-facebook-f hover:text-[#f75023]"></i></a>
                     </li>
                     <li class="px-3"><a href="#" class="text-[#ffff] hover:text-[#f75023]"><i
