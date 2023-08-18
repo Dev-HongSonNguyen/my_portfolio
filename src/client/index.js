@@ -61,7 +61,7 @@ const HomePage = () => {
                     <div class="flex items-center">
                         <div class="mr-[10px]">
                             <a class="bg-[#f75023] text-[#ffff] tra font-bold tracking-[1px] border px-10 py-2 border-[#f75023] hover:bg-[#2b2d33] rounded-md inline-block"
-                                href="https://drive.google.com/file/d/1gIOs38muFP1DrZCHIoGzN027C6-RRqll/view?usp=share_link"><span>DOWNLOAD CV</span></a>
+                                href="https://drive.google.com/file/d/1zR6yqL1DQz-mJx3-QlcmR1gN3AFI0yFW/view?usp=sharing"><span>DOWNLOAD CV</span></a>
                         </div>
                         <div class="">
                             <ul class="flex items-center">
